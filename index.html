@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific-Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="brand">CASIO</div>
+      <div class="model">fx-991MS S-V.P.A.M. 2nd edition</div>
+      <div class="display-container">
+        <div id="history"></div>
+        <input type="text" id="display" readonly value="0" />
+      </div>
+      <div class="buttons">
+        <!-- Function Keys -->
+        <button class="function" onclick="toggleShift()">SHIFT</button>
+        <button class="function" onclick="toggleAlpha()">ALPHA</button>
+        <!-- <button class="function" onclick="copyResult()">COPY</button> -->
+        <button class="function" onclick="toggleAlpha()">
+            
+        </button>
+        <button class="function" onclick="changeMode()">MODE</button>
+        <button class="function" onclick="togglePower()">ON</button>
+
+        <!-- Scientific Functions Row 1 -->
+        <button class="function" onclick="calculate('calc')">CALC</button>
+        <button class="function" onclick="calculate('integrate')">∫dx</button>
+        <button class="function" onclick="calculate('d/dx')">d/dx</button>
+        <button class="function" onclick="calculate('inverse')">x⁻¹</button>
+        <button class="function" onclick="handleConstant()">CONST</button>
+
+        <!-- Scientific Functions Row 2 -->
+        <button class="function" onclick="calculate('fraction')">a b/c</button>
+        <button class="function" onclick="calculate('sqrt')">√</button>
+        <button class="function" onclick="calculate('square')">x²</button>
+        <button class="function" onclick="calculate('power')">^</button>
+        <button class="function" onclick="calculate('log')">log</button>
+
+        <!-- Trig Functions -->
+        <button class="function" onclick="appendParenthesis('(')">(</button>
+        <button class="function" onclick="appendParenthesis(')')">)</button>
+        <button class="function" onclick="setTrigMode('hyp')">hyp</button>
+        <button class="function" onclick="calculate('sin')">sin</button>
+        <button class="function" onclick="calculate('cos')">cos</button>
+
+        <!-- Numbers and Operations -->
+        <button class="number" onclick="appendNumber(7)">7</button>
+        <button class="number" onclick="appendNumber(8)">8</button>
+        <button class="number" onclick="appendNumber(9)">9</button>
+        <button class="operator" onclick="deleteChar()">DEL</button>
+        <button class="operator" onclick="clearAll()">AC</button>
+
+        <button class="number" onclick="appendNumber(4)">4</button>
+        <button class="number" onclick="appendNumber(5)">5</button>
+        <button class="number" onclick="appendNumber(6)">6</button>
+        <button class="operator" onclick="appendOperator('*')">×</button>
+        <button class="operator" onclick="appendOperator('/')">÷</button>
+
+        <button class="number" onclick="appendNumber(1)">1</button>
+        <button class="number" onclick="appendNumber(2)">2</button>
+        <button class="number" onclick="appendNumber(3)">3</button>
+        <button class="operator" onclick="appendOperator('+')">+</button>
+        <button class="operator" onclick="appendOperator('-')">-</button>
+
+        <button class="number" onclick="appendNumber(0)">0</button>
+        <button class="number" onclick="appendNumber('.')">.</button>
+        <button class="function" onclick="appendExponent()">×10ˣ</button>
+        <button class="function" onclick="appendAnswer()">Ans</button>
+        <button class="equals" onclick="calculateResult()">=</button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
